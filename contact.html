@@ -139,35 +139,32 @@
           <div class="card contact-form-card">
             <h2>Send a Message</h2>
             <p>Tell me a little about what you're looking for and I'll be in touch the same day where I can.</p>
-            <form class="form" action="https://editmy.site/api/form/13" method="POST">
-              <input type="text" name="_hp" tabindex="-1" autocomplete="off" style="position:absolute; left:-9999px;" aria-hidden="true">
+            <form class="form" action="https://editmy.site/api/form/13" method="POST" data-thank-you="Thank you for your message. We will be in touch soon.">
+              <div style="display:none"><input type="text" name="_hp" tabindex="-1" autocomplete="off"></div>
               <input type="hidden" name="_t" value="">
               <input type="hidden" name="_page" value="">
-              <div class="form__row">
-                <div class="form__group">
-                  <label for="name" class="form__label form__label--required">Full Name</label>
-                  <input type="text" id="name" name="name" class="form__input" placeholder="Your full name" required autocomplete="name">
-                </div>
-                <div class="form__group">
-                  <label for="email" class="form__label form__label--required">Email Address</label>
-                  <input type="email" id="email" name="email" class="form__input" placeholder="you@example.com" required autocomplete="email">
-                </div>
+              <div class="form__group">
+                <label for="full_name" class="form__label form__label--required">Full Name</label>
+                <input type="text" id="full_name" name="full_name" class="form__input" placeholder="Your full name" required autocomplete="name">
               </div>
               <div class="form__group">
-                <label for="phone" class="form__label">Phone Number</label>
-                <input type="tel" id="phone" name="phone" class="form__input" placeholder="07xxx xxxxxx" autocomplete="tel">
-                <span class="form__hint">Optional — useful if you'd like me to message you back.</span>
+                <label for="email_address" class="form__label form__label--required">Email Address</label>
+                <input type="email" id="email_address" name="email_address" class="form__input" placeholder="you@example.com" required autocomplete="email">
               </div>
               <div class="form__group">
-                <label for="message" class="form__label form__label--required">Your Message</label>
-                <textarea id="message" name="message" class="form__textarea" placeholder="Tell me a little about what you're looking for. There's no need to go into detail — just enough so I can suggest the right session for you." required></textarea>
+                <label for="phone_number" class="form__label">Phone Number</label>
+                <input type="tel" id="phone_number" name="phone_number" class="form__input" placeholder="07xxx xxxxxx" autocomplete="tel">
+              </div>
+              <div class="form__group">
+                <label for="your_message" class="form__label form__label--required">Your Message</label>
+                <textarea id="your_message" name="your_message" class="form__textarea" placeholder="Tell me a little about what you&#039;re looking for. There&#039;s no need to go into detail — just enough so I can suggest the right session for you." required></textarea>
               </div>
               <div class="form__group form__group--checkbox">
-                <input type="checkbox" id="consent" name="consent" required>
-                <label for="consent">I agree to the <a href="privacy.html">privacy policy</a> and consent to my message being stored to process this enquiry.</label>
+                  <input type="checkbox" id="i_agree_to_the_privacy_policy_and_consent_to_my_message_being_stored_to_process_this_enquiry" name="i_agree_to_the_privacy_policy_and_consent_to_my_message_being_stored_to_process_this_enquiry" value="yes" required>
+                  <label for="i_agree_to_the_privacy_policy_and_consent_to_my_message_being_stored_to_process_this_enquiry">I agree to the privacy policy and consent to my message being stored to process this enquiry.</label>
               </div>
               <div>
-                <button type="submit" class="btn btn--primary btn--block">Send Message</button>
+                <button type="submit" class="btn btn--primary" style="width: 100%;">Send Message</button>
               </div>
             </form>
           </div>
