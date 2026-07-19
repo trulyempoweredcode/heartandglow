@@ -490,3 +490,53 @@ main > .section--alt + .section--alt:not(.section--dark):not(.cta-banner) {
 }
 
 /* === END BACKFILL === */
+
+/* =============================================
+   Homepage hero (hero--image): left-aligned text,
+   image kept vibrant on the right, ticks on one row (desktop)
+   ============================================= */
+
+/* Left-align the hero content */
+.hero--image .hero__inner {
+  justify-items: start;
+}
+.hero--image .hero__content {
+  text-align: left;
+  margin-left: 0;
+  margin-right: auto;
+}
+.hero--image .hero__text {
+  margin-left: 0;
+  margin-right: 0;
+}
+.hero--image .hero__actions,
+.hero--image .hero__ticks {
+  justify-content: flex-start;
+}
+.hero--image .hero__badge {
+  text-align: left;
+}
+
+/* Overlay: darker on the left (behind the text), clearing to the right
+   so the right-hand side of the photo stays bright and vibrant. */
+.hero--image::before {
+  background: linear-gradient(90deg,
+    rgba(0,0,0,0.62) 0%,
+    rgba(0,0,0,0.45) 32%,
+    rgba(0,0,0,0.15) 62%,
+    rgba(0,0,0,0) 100%);
+}
+
+@media (min-width: 768px) {
+  /* Keep the three pills on a single row on desktop */
+  .hero--image .hero__ticks {
+    flex-wrap: nowrap;
+  }
+}
+
+@media (max-width: 767px) {
+  /* On mobile the text spans full width, so use an even overlay for legibility */
+  .hero--image::before {
+    background: linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.5) 100%);
+  }
+}
